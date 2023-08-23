@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeliculasService {
 
-  token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNmQxN2E1MjdkNmMzMThlM2VhZmNiOWMxYTE4MTNhYyIsInN1YiI6IjVjZmE4MzAyOTI1MTQxNjczN2MxZWM1MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7fjGIjIuVoHVrG1by8RjJ2g2rAzIxXOCEzkKV9AHPqg';
+  apiUrl = environment.apiUrl;
 
   httpOptions ={
     headers: new HttpHeaders({
-      'Authorization': `Bearer ${this.token}`
+      'Authorization': `Bearer ${environment.apiKey}`
     })
   };
 
@@ -19,7 +20,7 @@ export class PeliculasService {
 
   obtenerPeliculas() {
     return this.http.get(
-      '/trending/movie/day?language=en-US',
+      this.apiUrl+'/trending/movie/day?language=en-US',
       this.httpOptions);
   } 
 }
