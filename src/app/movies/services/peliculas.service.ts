@@ -19,7 +19,7 @@ export class PeliculasService {
 
   obtenerPeliculas() {
     return this.http.get(
-      'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
+      '/trending/movie/day?language=en-US',
       this.httpOptions);
   } 
 }
