@@ -1,4 +1,5 @@
-<p>peliculas works!</p>
-<p>
-    {{peliculas |json}}
-</p>
+<div *ngFor="let pelicula of peliculas">
+    <h2>{{pelicula.title}}</h2>
+<h4>{{pelicula.overview}}</h4>
+<p>porcentaje de aprovacion : {{pelicula.vote_average}}</p>
+</div>
