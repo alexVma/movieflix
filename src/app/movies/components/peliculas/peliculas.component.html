@@ -1,5 +1,18 @@
+<!--
 <div *ngFor="let pelicula of peliculas">
     <h2>{{pelicula.title}}</h2>
-<h4>{{pelicula.overview}}</h4>
-<p>porcentaje de aprovacion : {{pelicula.vote_average}}</p>
+    <h4>{{pelicula.overview}}</h4>
+    <p>porcentaje de aprovacion : {{pelicula.vote_average}}</p>
 </div>
+
+-->
+
+
+    <div class="pelicula-list">
+        <div class="pelicula" *ngFor="let pelicula of peliculas">
+            <h2 class="pelicula-title">{{pelicula.title}}</h2>
+            <p class="pelicula-overview">{{pelicula.overview}}</p>
+            <p class="pelicula-rating">Porcentaje de aprobación: {{pelicula.vote_average}}</p>
+        </div>
+    </div>
+
